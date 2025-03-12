@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-public class Accommodation {
+public class Community {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +20,10 @@ public class Accommodation {
 
     @NotNull
     @Size(min = 1, max = 255)
-    private String address;
-
     private String description;
-    private double price;
+
+    private String location;
+    private String contactEmail;
 
     // Getters and Setters
     public Long getId() {
@@ -42,14 +42,6 @@ public class Accommodation {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -58,11 +50,19 @@ public class Accommodation {
         this.description = description;
     }
 
-    public double getPrice() {
-        return price;
+    public String getLocation() {
+        return location;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
+
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
     }
 }

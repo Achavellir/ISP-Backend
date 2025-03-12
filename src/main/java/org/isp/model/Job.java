@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-public class Accommodation {
+public class Job {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,14 +16,19 @@ public class Accommodation {
 
     @NotNull
     @Size(min = 1, max = 100)
-    private String name;
+    private String title;
 
     @NotNull
     @Size(min = 1, max = 255)
-    private String address;
-
     private String description;
-    private double price;
+
+    @NotNull
+    private String company;
+
+    @NotNull
+    private String location;
+
+    private double salary;
 
     // Getters and Setters
     public Long getId() {
@@ -34,20 +39,12 @@ public class Accommodation {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -58,11 +55,27 @@ public class Accommodation {
         this.description = description;
     }
 
-    public double getPrice() {
-        return price;
+    public String getCompany() {
+        return company;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 }
