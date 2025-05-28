@@ -48,25 +48,6 @@ The application will be available at http://localhost:8083
 
 API documentation is available via SpringDoc OpenAPI at http://localhost:8083/swagger-ui.html when the application is running.
 
-## Kubernetes Deployment
-
-This project includes Kubernetes manifests for deploying to a Kubernetes cluster. See the [Kubernetes README](kubernetes/README.md) for detailed deployment instructions.
-
-### Quick Deployment Steps
-
-1. Build the Docker image:
-```bash
-docker build -t isp-backend:latest .
-```
-
-2. Deploy to Kubernetes:
-```bash
-kubectl apply -f kubernetes/secrets.yaml
-kubectl apply -f kubernetes/configmap.yaml
-kubectl apply -f kubernetes/postgres.yaml
-kubectl apply -f kubernetes/deployment.yaml
-kubectl apply -f kubernetes/service.yaml
-```
 
 ## Project Structure
 
