@@ -40,6 +40,13 @@ public class CommunityController {
         return new ResponseEntity<>(savedCommunity, HttpStatus.CREATED);
     }
 
+    // Create multiple communities
+    @PostMapping("/batch")
+    public ResponseEntity<List<Community>> createCommunities(@Valid @RequestBody List<Community> communities) {
+        List<Community> savedCommunities = communityService.saveCommunities(communities);
+        return new ResponseEntity<>(savedCommunities, HttpStatus.CREATED);
+    }
+
     // Delete a community by ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCommunity(@PathVariable Long id) {

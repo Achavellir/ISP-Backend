@@ -32,6 +32,11 @@ public class CommunityService {
         return communityRepository.save(community);
     }
 
+    // Save multiple communities
+    public List<Community> saveCommunities(List<Community> communities) {
+        return communityRepository.saveAll(communities);
+    }
+
     // Delete a community by ID
     public void deleteCommunity(Long id) {
         communityRepository.deleteById(id);

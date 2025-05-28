@@ -22,10 +22,11 @@ public class LoginController {
             return ResponseEntity.status(400).body("Username and password must not be null");
         }
 
-        User user = userService.findByUsername(username);
-        if (user != null && user.getPassword().equals(password)) {
+        try {
+            // Use the signin method which properly verifies passwords
+            User user = userService.signin(username, password);
             return ResponseEntity.ok("Login successful");
-        } else {
+        } catch (Exception e) {
             return ResponseEntity.status(401).body("Invalid credentials");
         }
     }

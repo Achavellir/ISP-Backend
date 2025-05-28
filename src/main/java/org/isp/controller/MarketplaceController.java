@@ -1,5 +1,6 @@
 package org.isp.controller;
 
+import org.isp.model.Accommodation;
 import org.isp.model.MarketplaceItem;
 import org.isp.service.MarketplaceService;
 import org.springframework.http.HttpStatus;
